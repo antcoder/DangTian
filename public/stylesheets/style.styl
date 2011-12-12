@@ -1,0 +1,364 @@
+@import 'nib'
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    height: 0px;
+    display: block;
+    background-color: transparent;
+}
+::-webkit-scrollbar-track-piece {
+    background: #fff;
+}
+::-webkit-scrollbar-thumb {
+    background: #fff;
+}
+::-webkit-scrollbar-thumb:vertical {
+    border-right: 4px #6f6f6f solid;
+    height: 50px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+    border-bottom: 4px #6f6f6f solid;
+    width: 50px;
+}
+.dark::-webkit-scrollbar-track-piece {
+    background: #141414;
+}
+.dark::-webkit-scrollbar-thumb {
+    background: #141414;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6f6f6f;
+    border:0;
+}
+h1
+  user agent stylesheet
+  display block
+  font-size 2em
+  -webkit-margin-before 0.67em
+  -webkit-margin-after 0.67em
+  -webkit-margin-start 0px
+  -webkit-margin-end 0px
+  font-weight bold
+body
+  font-family "sans-serif","Helvetica Neue", "Lucida Grande", "Arial"
+  font-size 12px
+  background white
+  margin 0
+  padding 0
+  li
+    font-size 12px
+    color #777
+    line-height 18px
+    display list-item
+    tex-align -webkit-match-parent
+    a
+      cursor pointer
+      display block
+      font-size 11px
+      line-height 25px
+      height 25px
+      width auto
+      padding 0 10px
+      text-align center
+      position relative
+      margin 0 0px
+  a,a:link,a:focus,a:active,a:visited
+    color #888
+    background transparent
+    text-decoration none
+  a:hover
+    color #ff0084
+#wrap
+  width 100%
+  margin 0 auto
+  boder-bottom 1px solid #EEE
+  #wrap_container
+    position fixed
+    width 100%
+    margin 0 auto
+    z-index 999
+    background white
+    border-bottom 1px solid #EEE
+    #menu
+      width 950px
+      margin 0 auto
+      padding 0
+      ul
+        list-style none
+        margin 0
+        padding 0
+        li
+          background #ff0084
+          margin 5px 3px 0 0
+          float left
+          a
+            cursor pointer
+            color #fff
+            font-size 11px
+            line-height 25px
+            height 25px
+            width auto
+            padding 0 10px
+            text-align center
+            position relative
+            margin 0
+      #searchtxt
+        float right
+        width 200px
+        border 1px solid #ddd
+        margin 5px 3px 0 0
+        background url('/images/search.png') no-repeat center right 
+#header
+  width auto
+  height 100px
+  padding 60px 0 0 0
+  #header_container
+    width 950px
+    margin 0 auto
+    padding 0
+    height auto
+    #logo
+      width auto
+      height 50px
+      width 300px
+      padding 20px 0 0 0
+      h1
+        font-size 40px
+        line-height 30px
+        color #111
+        font-weight normal
+        letter-spacing -1px
+        margin 0px
+        padding 0px        
+      span
+        font-size 11px
+        line-height 18px
+        height 20px
+        color #AAA
+        font-weight: normal
+        letter-spacing 0px
+        margin 0 0
+#container
+  width 950px
+  background white
+  margin 0px auto
+  min-height 400px
+  padding 10px 0px
+  overflow hidden
+  #sidebar
+    width 270px
+    float right
+    font-size 0.8em
+    padding 0 0 20px 0
+    .tags
+      text-align left
+      a
+        color #ff0084 
+    h3
+      font-size 12px
+      line-height 16px
+      color #555
+      height 20px
+      border-bottom 1px solid #DDD
+      letter-spacing 0px
+      font-weight bold
+      margin 0px 0 10px 0
+    div
+      margin 0 20px 20px 0
+    .meinfo
+      text-align left
+      color #777
+      font-size 11px
+      line-height 16px
+      margin 0 0 30px 0
+    ul
+      list-style none
+      list-style-position outside
+      margin 0 0 30px 0
+      padding 0
+      li
+        height 25px
+      li img
+        float left
+        margin 3px 0 0 0
+      li a     
+        padding 0 5px
+        float left
+        font-size 11px
+        color #777
+        list-style-type none
+  #content
+    width 622px
+    border-right 1px solid #EEE
+    padding 0 30px 0 0
+    overflow hidden
+    .wheretxt
+      color #009dff
+      margin-left 10px
+.post
+  width 622px
+  margin 0 0 0px 0
+  height auto
+  padding 15px 5px
+  overflow hidden
+  background white
+  border-bottom 1px solid #DDD
+  .title
+    font-size 15px
+    line-height 16px
+    color #555
+    letter-spacing 0px
+    font-weight normal
+  .body
+    margin-bottom 20px
+    padding 0
+    text-align left
+    font-size 12px
+    line-height 20px
+    color #777
+    -webkit-margin-before 1em
+    -webkit-margin-after 1em
+    -webkit-margin-start 0px
+    -webkit-margin-end 0px
+    pre
+      background #eee
+      color #000
+      padding 0 10px
+  .postinfo
+    text-align left
+    a
+      color #ff0084
+    span
+      color #aaa
+    span,a
+      float left
+      margin-right 10px
+    .comments
+      float right
+      font-size 12px
+      font-weight bold
+      line-height 12px
+      color #bbb
+.post:last-child
+  border 0px solid #ddd
+#footer
+  clear both
+  text-align left
+  font-size 12px
+  color #222
+  margin 50px 0 0 0
+  border-top 1px solid #DDD
+  #footer_container
+    margin 0px auto 0 auto
+    padding 10px 10px 0 0
+    height 30px
+    width 950px
+    text-align left
+    .power
+      float right
+    a
+      color #ff0084
+      font-weight bold
+#login,#cform
+  margin 0
+  padding 20px
+  h3
+    font-size 16px
+    line-height 24px
+    color #555
+    font-weight bold
+    letter-spacing 0px
+    margin 0 0 5px 0
+  p
+    margin-bottom 20px
+    padding 0
+    text-align left
+    font-size 12px
+    line-height 20px
+    color #777
+    label
+      color #999
+      line-height 20px
+      height 20px
+      small
+        margin 1em 0
+        font-size smaller
+    input
+      border 1px solid #ccc
+      margin 0
+      color #222
+      background whiteSmoke
+      width 400px
+      height 30px
+      line-height 30px
+    textarea
+      border 1px solid #ccc
+      width 500px
+      margin 0
+      color #222
+      background whitesmoke
+    #submit
+      margin 20px 0 0 0
+      width 100px
+      text-align center
+      border 1px solid #555
+      color #555
+      font-size 11px
+      font-weight bold
+      padding 0 15px
+#comments
+  width 622px
+  .citem
+    background white
+    border-top 1px solid #ddd
+    padding 10px
+    width auto
+    height auto
+    margin 20px 0
+    a
+      img
+        border 1px solid #ddd
+        margin 0 10px 5px 0
+        padding 5px
+        float left
+        clear none
+    h5
+      font-size 12px
+      margin 0
+      color #111
+      font-weight bold
+    p
+      font-size 12px
+      line-height 20px
+      color #777
+      margin 5px 0 0 0
+
+#logo h1 a,.title h1 a
+  color #555
+  font-weight: normal;
+
+.body blockquote {
+    padding-left: 40px;
+    border-left: 5px #7d7d7d solid;
+}
+.body ul, .body ol {
+    margin-left: 20px;
+}
+.body pre {
+    margin: 10px;
+    background-color: #232223;
+    padding: 10px;
+    color: #f2f2f2;
+}
+
+.body code {
+    font-size: 14px;
+    font-family: 'monospace','Monaco';
+}
+.body p {
+    margin: 1em 0;
+}

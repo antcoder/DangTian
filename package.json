@@ -1,0 +1,10 @@
+{
+  "name": "dangtian",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "2.5.1",
+    "hooks": "0.1.9",
+    "mongodb": "0.9.6-23",
+    "connect": "1.8.x"
+  }
+}

@@ -1,0 +1,17 @@
+-if(message)
+  div 
+    = message
+form#login(method="post",action="/login")
+  input(type='hidden',name='csrf',value=csrf)
+  p
+    label
+      small Username:
+    br
+    input(type="text",name="login[username]")
+  p
+    label
+      small Password:
+    br
+    input(type="password",name="login[password]")
+  p
+    input#submit(type='submit',value='Login')

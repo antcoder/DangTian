@@ -1,0 +1,49 @@
+!!! 5
+html(lang = "en")
+  head
+    link(rel='stylesheet',href='/stylesheets/style.css')
+    script(type='text/javascript',src='/javascripts/jquery-1.7.1.min.js')
+    script(type='text/javascript',src='/javascripts/made/js/ace.js')
+    script(type='text/javascript',src='/javascripts/made/js/mode-markdown.js')
+    script(type='text/javascript',src='/javascripts/made/js/Markdown.Converter.js')
+    script(type='text/javascript')
+      $(document).ready(function(){
+        $(".body").each(function(){
+            $(this).html($(this).attr('data'));
+        });
+        $("#searchtxt").keydown(function(e){
+          if(e.which==13){
+          if($("#searchtxt").val().length>0){
+            window.location.href='/word/'+$("#searchtxt").val();
+          }else{
+            window.location.href='/';
+          }
+          }
+        });
+      })
+    title blogpig
+    body
+      #wrap
+        div#wrap_container
+          div#menu
+            ul
+              li
+                a(href="/")
+                  span 首页
+            input#searchtxt(type='text',placeholder='Search') 
+      #header
+        div#header_container
+          div#logo
+            h1 
+              a(href="/") BlogPig
+            span 心园
+      #container!= body
+      #footer
+        div#footer_container
+          span © 2011 
+          a(href="/") ant106 
+          div.power
+            span Powered By:
+            a(href="/") BlogPig
+
+

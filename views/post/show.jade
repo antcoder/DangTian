@@ -1,0 +1,93 @@
+script(type='text/javascript')
+  $(document).ready(function(){
+    $('.dele').click(function(){
+        if(!confirm('delete this?')){
+            return;
+        }
+    });
+  })
+
+#sidebar
+  h3 About Me 
+    -if(user)
+      span = user
+      a(href='/logout') Logout
+  div.meinfo 其实也没啥
+  h3 Social Network
+  ul
+    li
+      img(src="/images/rss_16.png")
+      a(href='/rss') FeedRss
+  h3 Recent Comments
+  div.rcomments
+    -each comment in rcomments
+      a(href='/post/'+comment.postid+'/show/#comment-' + comment._id) 
+        = comment.body.substring(0,15)
+      br
+  h3 Tags
+  div.tags
+    -each tag in tags
+      a(href='/tag/'+tag._id,style="font-size:"+(10+tag.value*3)+"px;")
+        =tag._id+' '
+
+#content
+  div.post
+    div.title
+      h1
+        a(href='#')
+          =post.title
+      -if(user)
+        a.edit(href='/post/'+post._id+'/edit') Edit
+        br
+        a.dele(href='/post/'+post._id+'/dele') Dele
+    div.postinfo
+      span.date
+        =post.date.getFullYear()+'-'+post.date.getMonth()+'-'+post.date.getDate()
+      ul.ptags
+        -each tag in post.tags
+          a(href="/tag/"+tag) 
+            =tag
+      a.comments(href='/post/'+post._id+'/show/#comments')
+        span 
+            =post.comments.length + ' comment'
+    br
+    div.body(data=post.bodyhtml)
+    div#comments
+      -each c in comments
+        div.citem(id='comment-'+c._id)
+          a.cauthor(href=c.website)
+            img.author(src=c.avatar,alt=c.author)
+          a(href=c.website)
+            = c.author +' '
+          span.cdate
+            = c.date.getFullYear()+'-'+c.date.getMonth()+'-'+c.date.getDate()
+          p.cbody 
+            = c.body
+
+  div#cform
+    h3 Level Comment
+
+    form#comment(method="post",action="/post/"+post._id+"/addcomment")
+      input(type='hidden',name='csrf',value=csrf)
+      p
+        label
+          small Name(required):
+        br
+        input(type="text",name="comment[author]",value=comment.author)
+      p
+        label
+          small Email(required,only gravatar):
+        br
+        input(type="text",name="comment[email]",value=comment.email)
+      p
+        label
+          small Website:
+        br
+        input(type="text",name="comment[website]",value=comment.website)
+      p
+        label
+          small Comment:
+        br
+        textarea(name="comment[body]",rows="10")=comment.body
+        br
+        input#submit(type='submit',value='Send')

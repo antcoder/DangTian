@@ -1,0 +1,75 @@
+script(type="text/javascript")
+    var page = 1;
+    $(document).scroll(function(){
+      if(($(window).scrollTop() + $(window).height()) >=
+          $('body').height()){
+        $.getJSON('/page/'+ (page++),function(results){
+          $.each(results,function(i,post){
+            var posthtml = $('<div class="post"><div class="title"><h1><a href="/post/'+ post._id +'/show/">'
+            + post.title +'</a></h1></div><div class="postinfo"><span class="date">'
+            + post.date.toString().substring(0,10) +'</span><ul class="ptags"></ul><a href="/post/'
+            + post._id +'/show/#comments" class="comments"><span></span></a></div><br/><p data="" class="body"></p></div>');
+            posthtml.find('.body').html(post.bodyhtml);
+
+            $.each(post.tags,function(i,tag){
+                posthtml.find('.ptags').append('<a href="/tag/'+ tag +'">'+ tag
+                +'</a>');
+            })
+
+            posthtml.find('.comments span').html(post.comments.length + ' comments')
+
+            $('#content').append(posthtml);
+          })
+        }) 
+      }
+    })
+
+#sidebar
+  h3 About Me 
+    -if(user)
+      span = user
+      a(href='/logout') Logout
+  div.meinfo 其实也没啥
+  h3 Social Network
+  ul
+    li
+      img(src="/images/rss_16.png")
+      a(href='/rss') FeedRss
+  h3 Recent Comments
+  div.rcomments
+    -each comment in rcomments
+      a(href='/post/'+comment.postid+'/show/#comment-' + comment._id) 
+        = comment.body.substring(0,15)
+      br
+  h3 Tags
+  div.tags
+    -each tag in tags
+      a(href='/tag/'+tag._id,style="font-size:"+(10+tag.value*3)+"px;")
+        =tag._id+' '
+
+#content
+  -if(wheretxt)
+    span.wheretxt 
+      = wheretxt.toString()
+  -if(user)
+    a#postadd(href='/post/add') 
+      span New
+  -each post in posts
+    div.post
+      div.title
+        h1
+          a(href='/post/'+post._id+'/show/')!=post.title   
+      div.postinfo
+        span.date
+          =post.date.getFullYear()+'-'+(post.date.getMonth()+1)+'-'+post.date.getDate()
+        ul.ptags
+          -each tag in post.tags
+            a(href="/tag/"+tag) 
+              =tag
+        a.comments(href='/post/'+post._id+'/show/#comments')
+          span 
+            =post.comments.length + ' comment'
+      br
+      p.body(data=post.bodyhtml)
+
+

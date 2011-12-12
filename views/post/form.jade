@@ -1,0 +1,35 @@
+!!! 5
+html(lang = "en")
+  head
+    link(rel='stylesheet',href='/javascripts/made/css/style.css')
+    script(type='text/javascript',src='/javascripts/made/js/jquery.js')
+    script(type='text/javascript',src='/javascripts/made/js/made.js')
+    script(type='text/javascript',src='/javascripts/made/js/ace.js')
+    script(type='text/javascript',src='/javascripts/made/js/mode-markdown.js')
+    script(type='text/javascript',src='/javascripts/made/js/theme-twilight.js')
+    script(type='text/javascript',src='/javascripts/made/js/theme-textmate.js')  
+    script(type='text/javascript',src='/javascripts/made/js/Markdown.Converter.js') 
+    body
+      form#post(method="post",action="/post/"+(post.title ? post._id+'/edit' : 'add'))
+        input(type='hidden',name='csrf',value=csrf)
+        label(for="post[title]") 标题:
+        input(type="text",name="post[title]",value=post.title)
+        label(for="post[tags]") 标签:
+        input(type="text",name="post[tags]",value=post.tags)
+        textarea.pane#postbody(name="post[body]")
+          =post.body
+        textarea.pane#postbodyhtml(name="post[bodyhtml]")
+          =post.bodyhtml
+        input(type="submit",id="submit",value="Save")
+        div#bar
+          div#color_scheme
+            label color_scheme
+            a#color_scheme_dark.selected(href="dark")
+              span
+            a#color_scheme_light(href="light")
+              span
+        div#container
+          div.pane#input(name="post[body]")
+            =post.body
+          div#preview_pane.pane
+            div#preview
