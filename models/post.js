@@ -33,6 +33,9 @@ function md5(str){
     return hash.update(str+"").digest('hex');
 }
 
+/*
+* gravatar
+*/
 commentsSchema.pre('save',function(next){
         if(!this.avatar){
             var gravatarHost = 'http://www.gravatar.com/avatar/';
