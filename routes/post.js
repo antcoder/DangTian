@@ -1,6 +1,7 @@
 /*
- *  Module dependencies
- * */
+ *  routes
+ * 
+ */
 
 var PostController = require('../controllers/post');
 
