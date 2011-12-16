@@ -144,6 +144,7 @@ module.exports = {
                         if(err) throw new err;
                         PostModel.remove({_id:req.params.id},function(err){
                                 if(err) throw new err; 
+                                Model.tagreset();
                                 res.redirect('/');
                         });
                 });
