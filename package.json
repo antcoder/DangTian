@@ -5,6 +5,7 @@
     "express": "2.5.1",
     "hooks": "0.1.9",
     "mongodb": "0.9.6-23",
-    "connect": "1.8.x"
+    "connect": "1.8.x",
+    "mongoose": "2.0+"
   }
 }
