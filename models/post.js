@@ -1,3 +1,6 @@
+/*
+*   models
+*/
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
@@ -53,6 +56,9 @@ var postSchema = new Schema({
 var Post = module.exports.post = mongoose.model('postSchema',postSchema);
 var Comment = module.exports.comment = mongoose.model('commentsSchema',commentsSchema);
 
+/*
+* tags reset
+*/
 module.exports.tagreset = function(){
     var map = function(){
         if(!this.tags){
