@@ -21,6 +21,6 @@
     "node-markdown": ">= 0.0.1",
     "connect-redis": ">= 0.0.1"
   },
-  "engines": { "node": ">= 0.4.1" }£¬
+  "engines": { "node": ">= 0.4.1 < 0.7.0" }£¬
   "main":"app.js"
 }
