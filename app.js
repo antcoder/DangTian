@@ -8,8 +8,8 @@ var express = require('express'),
     app = module.exports = express.createServer(),
     stylus = require('stylus'),
     nib = require('nib');
-    cluster = require('cluster'),
-    mongoStore = require('connect-mongo');
+    //cluster = require('cluster'),
+//    mongoStore = require('connect-mongo');
 
 function compile(str, path) {
     return stylus(str)
@@ -50,6 +50,9 @@ app.dynamicHelpers({
         csrf:csrf.token,
         wheretxt:function(req){
             if(req.session.wheretxt) return req.session.wheretxt;
+        },
+        info:function(){
+            return config;
         }
 });
 
@@ -64,6 +67,7 @@ app.configure('production',function(){
 //Routes
 require('./routes/post')(app);
 
+/*
 var numCPUs = require('os').cpus().length;
 if(cluster.isMaster){
     for(var i=0;i<numCPUs;i++){
@@ -78,10 +82,10 @@ if(cluster.isMaster){
     app.listen(config.port);
     console.log('Blog started on port ' + config.port);
 }
+*/
 
-/*
 if(!module.parent){
-    app.listen(config.port);
+    app.listen(config.port,config.host);
     console.log('Blog started on port ' + config.port);
 }
-*/
+

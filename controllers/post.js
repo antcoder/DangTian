@@ -77,14 +77,10 @@ module.exports = {
                         console.log(err);
                     }else{
                         Model.db.collection('tagsSchema',function(err,collection){
-                                if(err) console.log(err);
                                 collection.find({}).sort({'value':-1}).toArray(function(err,tags){
                                         //console.log(tags);
-                                        if(err) console.log(err);
                                         CommentModel.find({}).sort('date',-1).limit(10).run(function(err,rcomments){
-                                                if(err) console.log(err);
                                                 res.render('index',{title:'post index',rcomments:rcomments,posts:results,tags:tags,user:req.session.user});
-                                                //console.log(results);
                                         });
 
                                 });
@@ -144,6 +140,7 @@ module.exports = {
                         if(err) throw new err;
                         PostModel.remove({_id:req.params.id},function(err){
                                 if(err) throw new err; 
+                                Model.tagreset();
                                 res.redirect('/');
                         });
                 });
@@ -210,8 +207,5 @@ module.exports = {
                     res.send(arr.join(''));
                 }
         });
-    },
-    err:function(req,res){
-        res.render('err');
     }
 }

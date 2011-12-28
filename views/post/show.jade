@@ -1,18 +1,12 @@
-script(type='text/javascript')
-  $(document).ready(function(){
-    $('.dele').click(function(){
-        if(!confirm('delete this?')){
-            return;
-        }
-    });
-  })
-
 #sidebar
   h3 About Me 
     -if(user)
       span = user
       a(href='/logout') Logout
-  div.meinfo 其实也没啥
+  div.meinfo
+    a(href='http://www.flickr.com/photos/dangtian/sets/',target='_blank') Flickr
+    br
+    a(href='http://i.youku.com/u/id_UMzkzODI1MDYw.html',target='_blank') YouKu
   h3 Social Network
   ul
     li
@@ -42,7 +36,7 @@ script(type='text/javascript')
         a.dele(href='/post/'+post._id+'/dele') Dele
     div.postinfo
       span.date
-        =post.date.getFullYear()+'-'+post.date.getMonth()+'-'+post.date.getDate()
+        =post.date.getFullYear()+'-'+(post.date.getMonth()+1)+'-'+post.date.getDate()
       ul.ptags
         -each tag in post.tags
           a(href="/tag/"+tag) 
@@ -60,7 +54,7 @@ script(type='text/javascript')
           a(href=c.website)
             = c.author +' '
           span.cdate
-            = c.date.getFullYear()+'-'+c.date.getMonth()+'-'+c.date.getDate()
+            = c.date.getFullYear()+'-'+(c.date.getMonth()+1)+'-'+c.date.getDate()
           p.cbody 
             = c.body
 

@@ -1,5 +1,5 @@
 /*
- *  Module dependencies
+ *  Routes
  * */
 
 var PostController = require('../controllers/post');
@@ -25,3 +25,4 @@ module.exports = function(app){
     app.post('/login',PostController.loginPost);
     app.get('/logout',PostController.logout);
 }
+

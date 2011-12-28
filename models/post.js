@@ -2,10 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 
-mongoose.connect(require("../config").mongodb,function(err){
-    console.log(err);
-});
-
+mongoose.connect(require('../config').mongodb);
 
 function DateFormat(v){
     v = new Date(v);
@@ -49,6 +46,7 @@ var postSchema = new Schema({
         comments:[ObjectId],
         tags:[{type:String,index:true}]
 });
+
 
 var Post = module.exports.post = mongoose.model('postSchema',postSchema);
 var Comment = module.exports.comment = mongoose.model('commentsSchema',commentsSchema);

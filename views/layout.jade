@@ -1,11 +1,8 @@
 !!! 5
 html(lang = "en")
   head
-    link(rel='stylesheet',href='/stylesheets/style.css')
+    link(rel='stylesheet',href='/stylesheets/'+ info.skin +'style.css')
     script(type='text/javascript',src='/javascripts/jquery-1.7.1.min.js')
-    script(type='text/javascript',src='/javascripts/made/js/ace.js')
-    script(type='text/javascript',src='/javascripts/made/js/mode-markdown.js')
-    script(type='text/javascript',src='/javascripts/made/js/Markdown.Converter.js')
     script(type='text/javascript')
       $(document).ready(function(){
         $(".body").each(function(){
@@ -21,7 +18,7 @@ html(lang = "en")
           }
         });
       })
-    title blogpig
+    title dangtian
     body
       #wrap
         div#wrap_container
@@ -30,20 +27,35 @@ html(lang = "en")
               li
                 a(href="/")
                   span 首页
+              li
+                a(href="http://var.shareva.com",target="_blank")
+                  span var
             input#searchtxt(type='text',placeholder='Search') 
       #header
         div#header_container
           div#logo
             h1 
-              a(href="/") BlogPig
-            span 心园
+              a(href="/") 
+                = info.title
+            br
+            span 
+              = info.description
       #container!= body
       #footer
         div#footer_container
           span © 2011 
-          a(href="/") ant106 
+          a(href="/") antCoder 
           div.power
             span Powered By:
-            a(href="/") BlogPig
+            a(href="/") DangTian
+script(type='text/javascript')
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27932381-1']);
+  _gaq.push(['_trackPageview']);
 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 

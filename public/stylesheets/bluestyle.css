@@ -1,0 +1,74 @@
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment{height:0;display:block;background-color:transparent}
+::-webkit-scrollbar-track-piece{background:#fff}
+::-webkit-scrollbar-thumb{background:#fff}
+::-webkit-scrollbar-thumb:vertical{border-right:4px #6f6f6f solid;height:50px}
+::-webkit-scrollbar-thumb:horizontal{border-bottom:4px #6f6f6f solid;width:50px}
+.dark::-webkit-scrollbar-track-piece{background:#141414}
+.dark::-webkit-scrollbar-thumb{background:#141414}
+::-webkit-scrollbar-thumb:hover{background:#6f6f6f;border:0}
+h1{user:agent stylesheet;display:block;font-size:2em;-webkit-margin-before:.67em;-webkit-margin-after:.67em;-webkit-margin-start:0;-webkit-margin-end:0;font-weight:bold}
+body{font-family:"sans-serif","Helvetica Neue","Lucida Grande","Arial";font-size:12px;background:#fff;margin:0;padding:0;}
+body li{font-size:12px;color:#777;line-height:18px;display:list-item;tex-align:-webkit-match-parent;}
+body li a{cursor:pointer;display:block;font-size:11px;line-height:25px;height:25px;width:auto;padding:0 10px;text-align:center;position:relative;margin:0 0}
+body a,body a:link,body a:focus,body a:active,body a:visited{color:#888;background:transparent;text-decoration:none}
+body a:hover{color:#009dff}
+#wrap{width:100%;margin:0 auto;boder-bottom:1px solid #eee;}
+#wrap #wrap_container{position:fixed;width:100%;margin:0 auto;z-index:999;background:#fff;border-bottom:1px solid #eee;}
+#wrap #wrap_container #menu{width:950px;margin:0 auto;padding:0;}
+#wrap #wrap_container #menu ul{list-style:none;margin:0;padding:0;}
+#wrap #wrap_container #menu ul li:first-child{background:#009dff;margin:5px 3px 0 0;float:left;}
+#wrap #wrap_container #menu ul li:first-child a{cursor:pointer;color:#fff;font-size:11px;line-height:25px;height:25px;width:auto;padding:0 10px;text-align:center;position:relative;margin:0}
+#wrap #wrap_container #menu ul li{background:transparent;margin:5px 3px 0 0;float:left}
+#wrap #wrap_container #menu #searchtxt{float:right;width:200px;border:1px solid #ddd;margin:5px 3px 0 0;background:url("/images/search.png") no-repeat center right}
+#header{width:auto;height:100px;padding:60px 0 0 0;}
+#header #header_container{width:950px;margin:0 auto;padding:0;height:auto;}
+#header #header_container #logo{width:auto;height:50px;width:300px;padding:20px 0 0 0;}
+#header #header_container #logo h1{font-size:40px;line-height:30px;color:#111;font-weight:normal;letter-spacing:-1px;margin:0;padding:0}
+#header #header_container #logo span{font-size:11px;line-height:18px;height:20px;color:#aaa;font-weight:normal;letter-spacing:0;margin:0 0}
+#container{width:950px;background:#fff;margin:0 auto;min-height:400px;padding:10px 0;overflow:hidden;}
+#container #sidebar{width:270px;float:right;font-size:.8em;padding:0 0 20px 0;}
+#container #sidebar .tags{text-align:left;}
+#container #sidebar .tags a{color:#009dff}
+#container #sidebar h3{font-size:12px;line-height:16px;color:#555;height:20px;border-bottom:1px solid #ddd;letter-spacing:0;font-weight:bold;margin:0 0 10px 0}
+#container #sidebar div{margin:0 20px 20px 0}
+#container #sidebar .meinfo{text-align:left;color:#777;font-size:11px;line-height:16px;margin:0 0 30px 0}
+#container #sidebar ul{list-style:none;list-style-position:outside;margin:0 0 30px 0;padding:0;}
+#container #sidebar ul li{height:25px}
+#container #sidebar ul li img{float:left;margin:3px 0 0 0}
+#container #sidebar ul li a{padding:0 5px;float:left;font-size:11px;color:#777;list-style-type:none}
+#container #content{width:622px;border-right:1px solid #eee;padding:0 30px 0 0;overflow:hidden;}
+#container #content .wheretxt{color:#ff0084;margin-left:10px}
+.post{width:622px;margin:0 0 0 0;height:auto;padding:15px 5px;overflow:hidden;background:#fff;border-bottom:1px solid #ddd;}
+.post .title{font-size:15px;line-height:16px;color:#555;letter-spacing:0;font-weight:normal}
+.post .body{margin-bottom:20px;padding:0;text-align:left;font-size:12px;line-height:20px;color:#777;-webkit-margin-before:1em;-webkit-margin-after:1em;-webkit-margin-start:0;-webkit-margin-end:0;}
+.post .body pre{background:#eee;color:#000;padding:0 10px}
+.post .postinfo{text-align:left;}
+.post .postinfo a{color:#009dff}
+.post .postinfo span{color:#aaa}
+.post .postinfo span,.post .postinfo a{float:left;margin-right:10px}
+.post .postinfo .comments{float:right;font-size:12px;font-weight:bold;line-height:12px;color:#bbb}
+.post:last-child{border:0 solid #ddd}
+#footer{clear:both;text-align:left;font-size:12px;color:#222;margin:50px 0 0 0;border-top:1px solid #ddd;}
+#footer #footer_container{margin:0 auto 0 auto;padding:10px 10px 0 0;height:30px;width:950px;text-align:left;}
+#footer #footer_container .power{float:right}
+#footer #footer_container a{color:#009dff;font-weight:bold}
+#login,#cform{margin:0;padding:20px;}
+#login h3,#cform h3{font-size:16px;line-height:24px;color:#555;font-weight:bold;letter-spacing:0;margin:0 0 5px 0}
+#login p,#cform p{margin-bottom:20px;padding:0;text-align:left;font-size:12px;line-height:20px;color:#777;}
+#login p label,#cform p label{color:#999;line-height:20px;height:20px;}
+#login p label small,#cform p label small{margin:1em 0;font-size:smaller}
+#login p input,#cform p input{border:1px solid #ccc;margin:0;color:#222;background:whiteSmoke;width:400px;height:30px;line-height:30px}
+#login p textarea,#cform p textarea{border:1px solid #ccc;width:500px;margin:0;color:#222;background:#f5f5f5}
+#login p #submit,#cform p #submit{margin:20px 0 0 0;width:100px;text-align:center;border:1px solid #555;color:#555;font-size:11px;font-weight:bold;padding:0 15px}
+#comments{width:622px;}
+#comments .citem{background:#fff;border-top:1px solid #ddd;padding:10px;width:auto;height:auto;margin:20px 0;}
+#comments .citem a img{border:1px solid #ddd;margin:0 10px 5px 0;padding:5px;float:left;clear:none}
+#comments .citem h5{font-size:12px;margin:0;color:#111;font-weight:bold}
+#comments .citem p{font-size:12px;line-height:20px;color:#777;margin:5px 0 0 0}
+#logo h1 a,.title h1 a{color:#555;font-weight:normal}
+.body blockquote{padding-left:40px;border-left:5px #7d7d7d solid}
+.body ul,.body ol{margin-left:20px}
+.body pre{margin:10px;background-color:#232223;padding:10px;color:#f2f2f2}
+.body code{font-size:14px;font-family:'monospace','Monaco'}
+.body p{margin:1em 0}

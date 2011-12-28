@@ -3,7 +3,10 @@ script(type="text/javascript")
     $(document).scroll(function(){
       if(($(window).scrollTop() + $(window).height()) >=
           $('body').height()){
-        $.getJSON('/page/'+ (page++),function(results){
+        $.getJSON('/page/'+ page,function(results){
+          if(results.length>0){
+            page++;
+          }
           $.each(results,function(i,post){
             var posthtml = $('<div class="post"><div class="title"><h1><a href="/post/'+ post._id +'/show/">'
             + post.title +'</a></h1></div><div class="postinfo"><span class="date">'
@@ -29,7 +32,10 @@ script(type="text/javascript")
     -if(user)
       span = user
       a(href='/logout') Logout
-  div.meinfo 其实也没啥
+  div.meinfo
+    a(href='http://www.flickr.com/photos/dangtian/sets/',target='_blank') Flickr
+      br
+    a(href='http://i.youku.com/u/id_UMzkzODI1MDYw.html',target='_blank') YouKu  
   h3 Social Network
   ul
     li
