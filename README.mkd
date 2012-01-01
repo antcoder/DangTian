@@ -2,4 +2,4 @@
 
 It's a Blog!
 
-*by Nodejs / mongoose / express / markdown *
+*by Nodejs / mongoose / express / markdown*
