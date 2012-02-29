@@ -3,3 +3,5 @@
 It's a Blog!
 
 *by Nodejs / mongoose / express / markdown*
+
+[site]:http://wwww.shareva.com
