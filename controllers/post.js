@@ -4,7 +4,7 @@ var Model = require('../models/post'),
     config = require('../config');
 
 function hash(msg,key){
-    return crypto.createHmac('sha256',key).update(msg).update(msg).disgest('hex');
+    return crypto.createHmac('sha256',key).update(msg).digest('hex');
 }
 
 function authenticate(name,pass,fn){
@@ -15,7 +15,7 @@ function authenticate(name,pass,fn){
     if(user.pass == pass){
         return fn(null,user);
     }
-    new Error('password err');
+    return fn(new Error('please check you password or username'));
 }
 
 module.exports = {
@@ -46,7 +46,7 @@ module.exports = {
                             res.redirect('/');
                     });
                 }else{
-                    req.session.err = 'please check you password or username';
+                    req.session.err = err;
                     res.render('login');
                 }
         });
